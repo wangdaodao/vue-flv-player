@@ -1,5 +1,5 @@
 <template>
-  <video class="flv-player" v-bind="$attrs" ref="flvplayer"></video>
+  <video class="flv-player" v-bind="$attrs" ref="flvPlayer"></video>
 </template>
 
 <script>
@@ -10,7 +10,24 @@ import flvjs from 'flv.js'
 export default {
   name: 'vue-flv-player',
   //引入组件
-  props: {},
+  props: {
+    mediaDataSource: {
+      type: Object,
+      required: true
+    },
+    config: {
+      type: Object,
+      required: false
+    },
+    autoplay: {
+      type: Boolean,
+      required: false
+    },
+    poster: {
+      type: String,
+      required: false
+    },
+  },
   //引入混淆
   mixins: [],
   //import引入的组件需要注入到对象中才能使用
@@ -18,7 +35,7 @@ export default {
   data() {
     //这里存放数据
     return {
-      isSupported: true,
+      isSupported: null,
       flvPlayer: null
     };
   },
@@ -27,13 +44,55 @@ export default {
   //监控data中的数据变化
   watch: {},
   //方法集合
-  methods: {},
+  methods: {
+    constructor: function (mediaDataSource, config) {
+      this.flvPlayer.constructor(mediaDataSource, config)
+    },
+    destroy: function () {
+      this.flvPlayer.destroy()
+    },
+    on: function (event, listener) {
+      this.flvPlayer.on(event, listener)
+    },
+    off: function (event, listener) {
+      this.flvPlayer.off(event, listener)
+    },
+    load: function () {
+      this.flvPlayer.load()
+      this.state.load = true
+      if (this.autoplay) {
+        this.play()
+      }
+    },
+    unload: function () {
+      this.flvPlayer.unload()
+      this.state.load = false
+    },
+    play: function () {
+      this.state.load || this.load()
+      this.flvPlayer.play()
+    },
+    pause: function () {
+      this.flvPlayer.pause()
+    },
+    refresh: function () {
+      this.pause()
+      this.unload()
+      this.play()
+    },
+  },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    this.isSupported = flvjs.isSupported()
+    this.isSupported = flvjs.isSupported();
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
-  mounted() {},
+  mounted() {
+    if(this.isSupported){
+      let videoElement = this.$refs.flvPlayer;
+      this.flvPlayer = flvjs.createPlayer(this.mediaDataSource, this.config)
+      this.flvPlayer.attachMediaElement(videoElement)
+    }
+  },
   //生命周期 - 创建之前
   beforeCreate() {},
   //生命周期 - 挂载之前
