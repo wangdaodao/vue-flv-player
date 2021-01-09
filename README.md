@@ -40,7 +40,7 @@ Vue.use(vueFlvPlayer)
 ```vue
 <template>
   <div id="app">
-    <flv-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src" />
+    <vue-flv-player :width="900" :height="500" :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src" />
   </div>
 </template>
 
@@ -61,7 +61,7 @@ export default {
 ```vue
 <template>
   <div id="app">
-    <vue-flv-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src"/>
+    <vue-flv-player :width="900" :height="500" :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src"/>
   </div>
 </template>
 
@@ -89,7 +89,7 @@ export default {
 ```vue
 <template>
   <div>
-    <vue-flv-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src"/>
+    <vue-flv-player :width="900" :height="500" :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src"/>
   </div>
 </template>
 <script>
