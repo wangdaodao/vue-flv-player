@@ -1,5 +1,9 @@
 <template>
-  <video class="flv-player" v-bind="$attrs" ref="flvPlayer"></video>
+  <video :width="width" :height="height" class="flv-player" v-bind="$attrs" ref="flvPlayer">
+    <p>
+      您的浏览器不支持 video 标签。
+    </p>
+  </video>
 </template>
 
 <script>
@@ -19,6 +23,14 @@ export default {
       type: String,
       default: 'flv',
       required: true,
+    },
+    width: {
+      type: Number,
+      default: 800,
+    },
+    height: {
+      type: Number,
+      default: 600,
     },
     mediaDataSource: {
       type: Object,

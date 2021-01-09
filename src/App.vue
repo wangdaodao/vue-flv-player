@@ -2,7 +2,7 @@
   <div id="app">
     <button @click="change(1)">FLV</button>
     <button @click="change(2)">MP4</button>
-    <flv-player width="300" height="200" controls autoplay :muted="true" :source="src" :type="type"/>
+    <flv-player controls autoplay :muted="true" :source="src" :type="type"/>
   </div>
 </template>
 

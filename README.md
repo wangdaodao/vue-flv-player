@@ -40,7 +40,7 @@ Vue.use(vueFlvPlayer)
 ```vue
 <template>
   <div id="app">
-    <vue-flv-player :width="900" :height="500" :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src" />
+    <vue-flv-player :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src" />
   </div>
 </template>
 
@@ -61,7 +61,7 @@ export default {
 ```vue
 <template>
   <div id="app">
-    <vue-flv-player :width="900" :height="500" :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src"/>
+    <vue-flv-player :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src"/>
   </div>
 </template>
 
@@ -89,7 +89,7 @@ export default {
 ```vue
 <template>
   <div>
-    <vue-flv-player :width="900" :height="500" :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src"/>
+    <vue-flv-player :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src"/>
   </div>
 </template>
 <script>
@@ -110,7 +110,7 @@ export default {
 ```vue
 <template>
   <div>
-    <vue-flv-player width="300" height="200" controls autoplay :muted="true" :source="src" type="mp4"/>
+    <vue-flv-player controls autoplay :muted="true" :source="src" type="mp4"/>
   </div>
 </template>
 
@@ -134,7 +134,7 @@ export default {
   <div>
     <button @click="change(1)">FLV</button>
     <button @click="change(2)">MP4</button>
-    <vue-flv-player width="300" height="200" controls autoplay :muted="true" :source="src" :type="type"/>
+    <vue-flv-player controls autoplay :muted="true" :source="src" :type="type"/>
   </div>
 </template>
 
@@ -173,8 +173,8 @@ export default {
 | height | 高度 | number | — | 600 |
 | poster | 视频封面 | string | — | — |
 | muted | 是否静音 | boolean | — | false |
-| autoplay | 是否自动播放 | boolean | — | true |
-| controls | 是否显示控件 | boolean | — | true |
+| autoplay | 是否自动播放 | boolean | — | false |
+| controls | 是否显示控件 | boolean | — | false |
 | preload | 预加载 | string | auto/metadata/none | auto |
 | mediaDataSource | 高级媒体数据源设置 | Object | — | — |
 | config | 高级设置 | Object | — | — |
