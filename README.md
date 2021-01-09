@@ -177,6 +177,7 @@ export default {
 | controls | 是否显示控件 | boolean | — | true |
 | preload | 预加载 | string | auto/metadata/none | auto |
 | mediaDataSource | 高级媒体数据源设置 | Object | — | — |
+| config | 高级设置 | Object | — | — |
 
 ### mediaDataSource
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
