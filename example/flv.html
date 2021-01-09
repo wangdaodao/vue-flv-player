@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FLV播放</title>
+  <link rel="stylesheet" href="./lib/style.css">
+  <script src="./lib/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-flv-player/dist/vue-flv-player.umd.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <vue-flv-player :width="900" :height="500" :autoplay="true" :controls="true" ref="myPlayer" :source="src"/>
+</div>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      src:'http://resource.wangdaodao.com/test.flv'
+    }
+  })
+</script>
+</body>
+</html>

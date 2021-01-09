@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>切换播放</title>
+  <link rel="stylesheet" href="./lib/style.css">
+  <script src="./lib/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-flv-player/dist/vue-flv-player.umd.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="change(1)">FLV</button>
+    <button @click="change(2)">MP4</button>
+    <vue-flv-player width="300" height="200" controls autoplay :muted="true" :source="src" :type="type" />
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        type: '',
+        src: '',
+      },
+      methods: {
+        change(val) {
+          switch (val) {
+            case 1:
+              this.type = 'flv';
+              this.src = 'http://resource.wangdaodao.com/test.flv';
+              break;
+            case 2:
+              this.type = 'mp4';
+              this.src = 'http://vjs.zencdn.net/v/oceans.mp4';
+              break;
+          }
+        },
+      }
+    })
+  </script>
+</body>
+
+</html>
