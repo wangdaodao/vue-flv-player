@@ -4,7 +4,6 @@
 
 * 😊 基于 Vue + [`flv.js`](https://github.com/Bilibili/flv.js) 开发；
 * 😂 支持现代浏览器；
-* 😂 使用时，请确保浏览器已经安装[flash播放器](https://www.flash.cn/cdm/latest/flashplayer_install_cn.exe)；
 
 ## NPM安装
 
