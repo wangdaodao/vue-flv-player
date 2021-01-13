@@ -1,7 +1,7 @@
 {
   "name": "vue-flv-player",
   "description": "A flv.js player component for Vue.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "wangdaodao <hi@wangdaodao.com>",
   "license": "MIT",
   "private": false,
