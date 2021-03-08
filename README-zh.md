@@ -1,28 +1,31 @@
-# Vue-Flv-Player
+# Vue-Flv-Player 播放器
 
 ![NPM version](https://img.shields.io/npm/v/vue-flv-player.svg) ![GitHub stars](https://img.shields.io/github/stars/wangdaodao/vue-flv-player.svg) ![GitHub issues](https://img.shields.io/github/issues/wangdaodao/vue-flv-player.svg) ![GitHub forks](https://img.shields.io/github/forks/wangdaodao/vue-flv-player.svg)
 
-* 😊 Vue + [`flv.js`](https://github.com/Bilibili/flv.js);
-* 😂 Support for modern browsers;
-* 🀄 [中文文档](./README-zh.md)
+* 😊 基于 Vue + [`flv.js`](https://github.com/Bilibili/flv.js) 开发；
+* 😂 支持现代浏览器；
 
-## NPM
+## NPM安装
 
 ```bash
 npm i vue-flv-player --save
 ```
 
-## CDN
+## CDN引用
 
-Get the latest version from [unpkg.com/vue-flv-player](https://unpkg.com/vue-flv-player) or [www.jsdelivr.com/package/npm/vue-flv-player](https://www.jsdelivr.com/package/npm/vue-flv-player) , and import JavaScript and CSS file in your page.
+目前可以通过 [unpkg.com/vue-flv-player](https://unpkg.com/vue-flv-player) 或者 [www.jsdelivr.com/package/npm/vue-flv-player](https://www.jsdelivr.com/package/npm/vue-flv-player) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
 
 ```html
+<!-- 引入组件库 -->
 <script src="https://unpkg.com/vue-flv-player/dist/vue-flv-player.umd.min.js"></script>
-<!-- or -->
+
+<!-- 或者 -->
 <script src="https://cdn.jsdelivr.net/npm/vue-flv-player/dist/vue-flv-player.umd.min.js"></script>
 ```
 
-## Quick Start
+## 使用
+
+### 全局使用
 
 ```js
 // main.js
@@ -52,9 +55,35 @@ export default {
 </script>
 ```
 
+### 局部使用
+
+```vue
+<template>
+  <div id="app">
+    <vue-flv-player :autoplay="true" :controls="true" :muted="true" ref="myPlayer" :source="src"/>
+  </div>
+</template>
+
+<script>
+import vueFlvPlayer from 'vue-flv-player'
+
+export default {
+  name: 'App',
+  components: {
+    vueFlvPlayer,
+  },
+  data() {
+    return {
+      src:"http://resource.wangdaodao.com/test.flv"
+    };
+  }
+};
+</script>
+```
+
 ## FLV
 
-[FLV-demo](http://demo.const.team/flv/flv.html)
+[FLV例子](http://demo.const.team/flv/flv.html)
 
 ```vue
 <template>
@@ -75,7 +104,7 @@ export default {
 
 ## MP4
 
-[MP4-demo](http://demo.const.team/flv/mp4.html)
+[MP4](http://demo.const.team/flv/mp4.html)
 
 ```vue
 <template>
@@ -95,9 +124,9 @@ export default {
 </script>
 ```
 
-## Change type
+## 切换类型
 
-[Change-type](http://demo.const.team/flv/all.html)
+[切换类型](http://demo.const.team/flv/all.html)
 
 ```vue
 <template>
@@ -135,44 +164,44 @@ export default {
 ```
 
 ### Attributes
-| Attribute      | Description    | Type      | Accepted Values       | Default   |
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| source | source | string | — | — |
-| type | type | string | `mp4`/`flv` | `flv` |
-| width | width | number | — | 800 |
-| height | height | number | — | 600 |
-| poster | Video cover | string | — | — |
-| muted | muted | boolean | — | false |
-| autoplay | autoplay | boolean | — | false |
-| controls | controls | boolean | — | false |
-| preload | preload | string | auto/metadata/none | auto |
-| mediaDataSource | Media data source settings | Object | — | — |
-| config | advanced setting | Object | — | — |
+| source | 播放流 | string | — | — |
+| type | 流类型 | string | `mp4`/`flv` | `flv` |
+| width | 宽度 | number | — | 800 |
+| height | 高度 | number | — | 600 |
+| poster | 视频封面 | string | — | — |
+| muted | 是否静音 | boolean | — | false |
+| autoplay | 是否自动播放 | boolean | — | false |
+| controls | 是否显示控件 | boolean | — | false |
+| preload | 预加载 | string | auto/metadata/none | auto |
+| mediaDataSource | 高级媒体数据源设置 | Object | — | — |
+| config | 高级设置 | Object | — | — |
 
 ### mediaDataSource
-| Attribute      | Description    | Type      | Accepted Values       | Default   |
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| type | type | string | `mp4`/`flv` | `flv` |
-| isLive | the data source is a live stream | boolean | — | — |
-| cors | Indicates whether to enable CORS for http fetching | boolean | — | — |
-| withCredentials | Indicates whether to do http fetching with cookies | boolean | — | — |
-| hasAudio | Indicates whether the stream has audio track | boolean | — | — |
-| hasVideo | Indicates whether the stream has video track | boolean | — | — |
-| duration | Indicates total media duration, in milliseconds | number | — | — |
-| filesize | Indicates total file size of media file, in bytes| number | — | — |
-| url | Indicates media URL, can be starts with 'https(s)' or 'ws(s)' (WebSocket) | string | `https(s)` / `ws(s)` | — |
-| segments | Optional field for multipart playback, see MediaSegment  | Array | — | — |
+| type | 流类型 | string | `mp4`/`flv` | `flv` |
+| isLive | 指示数据源是否为**实时流** | boolean | — | — |
+| cors | 是否为http获取启用`CORS` | boolean | — | — |
+| withCredentials | 发送跨域请求凭据 | boolean | — | — |
+| hasAudio | 指示流是否有音频曲目 | boolean | — | — |
+| hasVideo | 指示流是否有视频曲目 | boolean | — | — |
+| duration | 总媒体持续时间，单位为**毫秒** | number | — | — |
+| filesize | 表示媒体文件的总文件大小| number | — | — |
+| url | 媒体URL，设置后覆盖 `source` | string | `https(s)` / `ws(s)` | — |
+| segments | 多部分播放，请参见**MediaSegment**  | Array | — | — |
 
 ### MediaSegment
-| Attribute       | Type     | Description                              |
+| 参数       | 类型     | 说明                              |
 | ----------- | -------- | ---------------------------------------- |
-| duration  | number | Required field, indicates segment duration in milliseconds |
-| filesize | number | Optional field, indicates segment file size in bytes |
-| url      | string | Required field, indicates segment file URL |
+| duration  | number | 必填字段，表示以**毫秒为单位的段持续时间** |
+| filesize | number | 可选字段，表示段文件大小 |
+| url      | string | 必填字段，表示段文件URL |
 
 ### Config
 
-| Attribute                            | Type      | Default                      | Description                              |
+| 参数                            | 类型      | 默认值                      | 说明                              |
 | -------------------------------- | --------- | ---------------------------- | ---------------------------------------- |
 | `enableWorker?`                  | `boolean` | `false`                      | Enable separated thread for transmuxing (unstable for now) |
 | `enableStashBuffer?`             | `boolean` | `true`                       | Enable IO stash buffer. Set to false if you need realtime (minimal latency) for live stream playback, but may stalled if there's network jittering. |
@@ -196,11 +225,11 @@ export default {
 | `referrerPolicy?`                | `string`  | `no-referrer-when-downgrade` | Indicates the [Referrer Policy][] when using FetchStreamLoader |
 | `headers?`                       | `object`  | `undefined`                  | Indicates additional headers that will be added to request |
 
-More configuration，`flv.js` [flv-api](https://github.com/bilibili/flv.js/blob/master/docs/api.md)
+更多配置，请看 `flv.js` [官方文档](https://github.com/bilibili/flv.js/blob/master/docs/api.md)
 
 ### Methods
-| Method      | Description    | Parameters        |
+| 方法名      | 说明    | 参数        |
 |----------   |--------|----------   |
-| play        | play   |             |
-| pause       | pause   |             |
-| dispose     | dispose   |             |
+| play        | 播放   |             |
+| pause       | 暂停   |             |
+| dispose     | 销毁   |             |
