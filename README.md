@@ -6,13 +6,15 @@
 * 😂 Support for modern browsers;
 * 🀄 [中文文档](./README-zh.md)
 
-## NPM
+## Install
+
+### NPM
 
 ```bash
 npm i vue-flv-player --save
 ```
 
-## CDN
+### CDN
 
 Get the latest version from [unpkg.com/vue-flv-player](https://unpkg.com/vue-flv-player) or [www.jsdelivr.com/package/npm/vue-flv-player](https://www.jsdelivr.com/package/npm/vue-flv-player) , and import JavaScript and CSS file in your page.
 
@@ -51,10 +53,9 @@ export default {
 };
 </script>
 ```
+## Example
 
-## FLV
-
-[FLV-demo](http://demo.const.team/flv/flv.html)
+### FLV
 
 ```vue
 <template>
@@ -73,9 +74,7 @@ export default {
 </script>
 ```
 
-## MP4
-
-[MP4-demo](http://demo.const.team/flv/mp4.html)
+### MP4
 
 ```vue
 <template>
@@ -95,9 +94,7 @@ export default {
 </script>
 ```
 
-## Change type
-
-[Change-type](http://demo.const.team/flv/all.html)
+### Change type
 
 ```vue
 <template>
@@ -134,7 +131,7 @@ export default {
 </script>
 ```
 
-### Attributes
+## Attributes
 | Attribute      | Description    | Type      | Accepted Values       | Default   |
 |---------- |-------- |---------- |-------------  |-------- |
 | source | source | string | — | — |
@@ -198,7 +195,7 @@ export default {
 
 More configuration，`flv.js` [flv-api](https://github.com/bilibili/flv.js/blob/master/docs/api.md)
 
-### Methods
+## Methods
 | Method      | Description    | Parameters        |
 |----------   |--------|----------   |
 | play        | play   |             |

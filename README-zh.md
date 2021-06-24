@@ -5,13 +5,15 @@
 * 😊 基于 Vue + [`flv.js`](https://github.com/Bilibili/flv.js) 开发；
 * 😂 支持现代浏览器；
 
-## NPM安装
+## 安装
+
+### NPM
 
 ```bash
 npm i vue-flv-player --save
 ```
 
-## CDN引用
+### CDN
 
 目前可以通过 [unpkg.com/vue-flv-player](https://unpkg.com/vue-flv-player) 或者 [www.jsdelivr.com/package/npm/vue-flv-player](https://www.jsdelivr.com/package/npm/vue-flv-player) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
 
@@ -81,9 +83,9 @@ export default {
 </script>
 ```
 
-## FLV
+## 例子
 
-[FLV例子](http://demo.const.team/flv/flv.html)
+### FLV
 
 ```vue
 <template>
@@ -102,9 +104,7 @@ export default {
 </script>
 ```
 
-## MP4
-
-[MP4](http://demo.const.team/flv/mp4.html)
+### MP4
 
 ```vue
 <template>
@@ -124,7 +124,7 @@ export default {
 </script>
 ```
 
-## 切换类型
+### 切换类型
 
 [切换类型](http://demo.const.team/flv/all.html)
 
@@ -163,7 +163,7 @@ export default {
 </script>
 ```
 
-### Attributes
+## 属性
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | source | 播放流 | string | — | — |
@@ -178,7 +178,7 @@ export default {
 | mediaDataSource | 高级媒体数据源设置 | Object | — | — |
 | config | 高级设置 | Object | — | — |
 
-### mediaDataSource
+### mediaDataSource 配置
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | type | 流类型 | string | `mp4`/`flv` | `flv` |
@@ -192,14 +192,14 @@ export default {
 | url | 媒体URL，设置后覆盖 `source` | string | `https(s)` / `ws(s)` | — |
 | segments | 多部分播放，请参见**MediaSegment**  | Array | — | — |
 
-### MediaSegment
+### MediaSegment 配置
 | 参数       | 类型     | 说明                              |
 | ----------- | -------- | ---------------------------------------- |
 | duration  | number | 必填字段，表示以**毫秒为单位的段持续时间** |
 | filesize | number | 可选字段，表示段文件大小 |
 | url      | string | 必填字段，表示段文件URL |
 
-### Config
+### Config 配置
 
 | 参数                            | 类型      | 默认值                      | 说明                              |
 | -------------------------------- | --------- | ---------------------------- | ---------------------------------------- |
@@ -227,7 +227,7 @@ export default {
 
 更多配置，请看 `flv.js` [官方文档](https://github.com/bilibili/flv.js/blob/master/docs/api.md)
 
-### Methods
+## 方法
 | 方法名      | 说明    | 参数        |
 |----------   |--------|----------   |
 | play        | 播放   |             |
