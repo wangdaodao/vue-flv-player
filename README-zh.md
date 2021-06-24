@@ -1,7 +1,5 @@
 # Vue-Flv-Player 播放器
 
-![NPM version](https://img.shields.io/npm/v/vue-flv-player.svg) ![GitHub stars](https://img.shields.io/github/stars/wangdaodao/vue-flv-player.svg) ![GitHub issues](https://img.shields.io/github/issues/wangdaodao/vue-flv-player.svg) ![GitHub forks](https://img.shields.io/github/forks/wangdaodao/vue-flv-player.svg)
-
 * 😊 基于 Vue + [`flv.js`](https://github.com/Bilibili/flv.js) 开发；
 * 😂 支持现代浏览器；
 
