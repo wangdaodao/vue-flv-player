@@ -1,6 +1,6 @@
 # Vue-Flv-Player
 
-![NPM version](https://img.shields.io/npm/v/vue-flv-player.svg) ![GitHub stars](https://img.shields.io/github/stars/wangdaodao/vue-flv-player.svg) ![GitHub issues](https://img.shields.io/github/issues/wangdaodao/vue-flv-player.svg) ![GitHub forks](https://img.shields.io/github/forks/wangdaodao/vue-flv-player.svg)
+![NPM Publish](https://github.com/wangdaodao/vue-flv-player/actions/workflows/npm-publish.yml/badge.svg) ![NPM version](https://img.shields.io/npm/v/vue-flv-player.svg) ![GitHub stars](https://img.shields.io/github/stars/wangdaodao/vue-flv-player.svg) ![GitHub issues](https://img.shields.io/github/issues/wangdaodao/vue-flv-player.svg) ![GitHub forks](https://img.shields.io/github/forks/wangdaodao/vue-flv-player.svg)
 
 * 😊 Vue + [`flv.js`](https://github.com/Bilibili/flv.js);
 * 😂 Support for modern browsers;
